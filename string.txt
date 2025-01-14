@@ -1,0 +1,72 @@
+#include<iostream.h>
+#include<conio.h>
+#include<string.h>
+
+void main() {
+    clrscr();
+    
+    char str1[100], str2[100];
+    int choice;
+    
+    cout << "String Library Functions:\n";
+    cout << "1. String Length (strlen)\n";
+    cout << "2. String Copy (strcpy)\n";
+    cout << "3. String Concatenate (strcat)\n";
+    cout << "4. String Compare (strcmp)\n";
+    cout << "5. Substring Search (strstr)\n";
+    cout << "Enter your choice (1-5): ";
+    cin >> choice;
+
+    switch (choice) {
+        case 1:
+            cout << "Enter a string: ";
+            cin >> str1;
+            cout << "Length of the string is: " << strlen(str1) << endl;
+            break;
+
+        case 2:
+            cout << "Enter the source string: ";
+            cin >> str1;
+            strcpy(str2, str1);
+            cout << "Copied string is: " << str2 << endl;
+            break;
+
+        case 3:
+            cout << "Enter the first string: ";
+            cin >> str1;
+            cout << "Enter the second string: ";
+            cin >> str2;
+            strcat(str1, str2);
+            cout << "Concatenated string is: " << str1 << endl;
+            break;
+
+        case 4:
+            cout << "Enter the first string: ";
+            cin >> str1;
+            cout << "Enter the second string: ";
+            cin >> str2;
+            if (strcmp(str1, str2) == 0) {
+                cout << "Strings are equal" << endl;
+            } else {
+                cout << "Strings are not equal" << endl;
+            }
+            break;
+
+        case 5:
+            cout << "Enter the main string: ";
+            cin >> str1;
+            cout << "Enter the substring to search: ";
+            cin >> str2;
+            if (strstr(str1, str2)) {
+                cout << "Substring found" << endl;
+            } else {
+                cout << "Substring not found" << endl;
+            }
+            break;
+
+        default:
+            cout << "Invalid choice!" << endl;
+    }
+
+    getch();
+}
